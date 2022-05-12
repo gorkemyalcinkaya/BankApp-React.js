@@ -22,7 +22,6 @@ const Transfer = () => {
   const HandleSubmit = (e) => {
     e.preventDefault();
     dispatch(transfer(value));
-    window.location.reload();
   };
   const RenderSuccess = () => {
     if (!err) {

@@ -13,36 +13,41 @@ const Home = () => {
     <Container className="h-100">
       <div
         className="row  align-items-center h-100  m-5 "
-        style={{ fontSize: "15vw", marginTop: "20%" }}
+        style={{ marginTop: "20%" }}
       >
-        <div className="col-8 ">
-          <div className="row text-center">
-            <h1>mericBANK ile Paranız </h1>
-            <h1>Emin Ellerde</h1>
+        <div className="col ">
+          <div className="row text-center" style={{ fontSize: "4vw" }}>
+            <p>Paranız Emin Ellerde</p>
+            <p className="text-secondary">Yani benim cebimde</p>
           </div>
         </div>
-        <div className="col-4">
-          <div className="row text-center">
-            <i className="bi bi-bank text-warning "></i>
-            <button className="btn btn-primary">Hemen Kaydol</button>
-          </div>
+
+        <div className="text-center " style={{ marginTop: "10%" }}>
+          <a href="/signup" className="btn btn-dark btn-small w-25">
+            Başla
+          </a>
         </div>
       </div>
       <div
         className="row bg-primary text-center text-light"
-        style={{ fontSize: "8vw", marginTop: "15%", marginBottom: "20%" }}
+        style={{
+          marginTop: "15%",
+          marginBottom: "20%",
+          paddingTop: "2%",
+          paddingBottom: "2%",
+        }}
       >
         <div className="col-4 ">
-          <i className="bi bi-safe2"></i>
-          <h1>Üst Seviye Güvenlik</h1>
+          <i className="bi bi-safe2" style={{ fontSize: "8vh" }}></i>
+          <p>Üst Seviye Güvenlik</p>
         </div>
         <div className="col-4">
-          <i className="bi bi-arrow-left-right"></i>
-          <h1>Hızlı Para Transferi</h1>
+          <i className="bi bi-arrow-left-right" style={{ fontSize: "8vh" }}></i>
+          <p>Hızlı Para Transferi</p>
         </div>
         <div className="col-4">
-          <i className="bi bi-bullseye"></i>
-          <h1>Hedefe Yönelik Kolay Kullanım</h1>
+          <i className="bi bi-bullseye" style={{ fontSize: "8vh" }}></i>
+          <p>Hedefe Yönelik Kolay Kullanım</p>
         </div>
       </div>
       <div

@@ -22,17 +22,21 @@ export const userSlice = createSlice({
       const found = state.users.find(
         (element) => element.email === action.payload.email
       );
+      const randomId = Math.floor(Math.random() * 9999);
+      const user = {
+        id: randomId,
+        name: action.payload.name,
+        surname: action.payload.surname,
+        email: action.payload.email,
+        password: action.payload.password,
+        money: 1000,
+        transactions: [],
+      };
       if (!found && action.payload.password === action.payload.rePassword) {
-        state.users.push({
-          id: Math.floor(Math.random() * 9999),
-          name: action.payload.name,
-          surname: action.payload.surname,
-          email: action.payload.email,
-          password: action.payload.password,
-          money: 1000,
-          transactions: [],
-        });
+        state.users.push(user);
         state.errors.signup = null;
+        state.loggedUser = user;
+        History.navigate("/user/" + randomId);
       } else {
         state.errors.signup = "Kullanıcı Oluşturulamadı Tekrar Deneyiniz";
       }
@@ -45,6 +49,7 @@ export const userSlice = createSlice({
         if (found.password === action.payload.password) {
           state.errors.login = null;
           state.loggedUser = found;
+          History.navigate("/user/" + found.id);
         } else {
           state.errors.login = "kullanıcı adı veya şifre hatalı";
         }
@@ -68,6 +73,7 @@ export const userSlice = createSlice({
               item.money = item.money - amount;
               state.loggedUser = item;
               state.errors.transfer = null;
+              History.navigate("/user/" + item.id);
             } else {
               console.log(state.err);
               state.errors.transfer = "Bakiye Yetersiz!";
@@ -76,8 +82,10 @@ export const userSlice = createSlice({
         });
         state.users.map((item) => {
           if (item.email === action.payload.receiver) {
-            item.transactions.push(action.payload);
-            item.money = item.money + amount;
+            if (item.money >= action.payload.sender) {
+              item.transactions.push(action.payload);
+              item.money = item.money + amount;
+            }
           }
         });
         console.log(action.payload);

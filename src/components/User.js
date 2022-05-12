@@ -37,6 +37,9 @@ const User = () => {
         </div>
         <div className="col-8">
           <h4>
+            {loggedUser.name} {loggedUser.surname}
+          </h4>
+          <h4>
             <i className="bi bi-envelope"></i> {loggedUser.email}
           </h4>
           <h4>

@@ -6,18 +6,14 @@ const Footer = () => {
       <div className="container-fluid text-center text-md-left">
         <div className="row">
           <div className="col">
-            <h5 className="text-uppercase">mericBANK</h5>
+            <h5 className="">
+              <i className="bi bi-bank"></i> MericBank
+            </h5>
             <p>
               Bu sitede yayınlanan her türlü ses, görüntü, yazı içeren bilgi ve
               belge, ticari marka ve her tür fikri mülkiyet hakkı , ilgili
               markalara aittir, yalnızca sahipleri tarafından ve sahiplerinin
-              izni ile kullanılmaktadır ve telif hakları kapsamındadır. Bunlar
-              herhangi bir şekilde izinsiz kopyalanamaz, üzerlerinde değişiklik
-              yapılamaz, kiralanamaz, ödünç verilemez, iletilemez ve
-              yayınlanamaz. Bu siteden alınan her türlü ses, görüntü, yazı
-              içeren hiçbir bilgi ve belge satılamaz veya herhangi bir kâr
-              amacıyla dağıtılamaz. Başka kurum yada kuruluşlarca dökümanlarında
-              yayınlanamaz
+              izni ile kullanılmaktadır ve telif hakları kapsamındadır.
             </p>
           </div>
 
@@ -25,9 +21,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="footer-copyright text-center py-3">
-        © 2022 Copyright: <i className="bi bi-bank"></i> mericBANK
-      </div>
+      <div className="footer-copyright text-center py-3">© 2022 Copyright</div>
     </footer>
   );
 };

@@ -23,77 +23,89 @@ const SıgnUp = () => {
   const HandleSubmit = (e) => {
     e.preventDefault();
     dispatch(createUser(value));
-    window.location.reload();
   };
   return (
-    <Container>
-      <Form className="m-5 p-5" onSubmit={HandleSubmit}>
-        <Container>
-          <Form.Group className="mb-3" controlId="formBasicName">
-            <Form.Label>Ad</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Adınızı Girin"
-              name="name"
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicSurname">
-            <Form.Label>Soyad</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Soyadınızı Girin"
-              name="surname"
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email adresi</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Email Girin"
-              name="email"
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Şifre</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Şifre"
-              name="password"
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicRePassword">
-            <Form.Label>Şifre-Tekrar</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Şifre-Tekrar"
-              name="rePassword"
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-          <div>
-            Zaten Üye misin ? <a href="/login">Giriş Yap</a>
-          </div>
-          {err ? (
-            <div className="alert alert-danger " role="alert">
-              {err}
+    <Container className="h-100">
+      <div className="row align-items-center ">
+        <div className="col">
+          <Container>
+            <div className="text-center">
+              <p>Hemen Kayıt Ol ve Hizmetlerimizden Yararlanmaya Başla</p>
             </div>
-          ) : (
-            <div></div>
-          )}
-          <Button variant="primary" type="submit">
-            Kaydol
-          </Button>
-        </Container>
-      </Form>
+          </Container>
+        </div>
+        <div className="col">
+          <Container className="m-3">
+            <Form onSubmit={HandleSubmit}>
+              <Container>
+                <Form.Group className="mb-3" controlId="formBasicName">
+                  <Form.Label>Ad</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Adınızı Girin"
+                    name="name"
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicSurname">
+                  <Form.Label>Soyad</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Soyadınızı Girin"
+                    name="surname"
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Email adresi</Form.Label>
+                  <Form.Control
+                    type="email"
+                    placeholder="Email Girin"
+                    name="email"
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Şifre</Form.Label>
+                  <Form.Control
+                    type="password"
+                    placeholder="Şifre"
+                    name="password"
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicRePassword">
+                  <Form.Label>Şifre-Tekrar</Form.Label>
+                  <Form.Control
+                    type="password"
+                    placeholder="Şifre-Tekrar"
+                    name="rePassword"
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+                <div>
+                  Zaten Üye misin ? <a href="/login">Giriş Yap</a>
+                </div>
+                {err ? (
+                  <div className="alert alert-danger " role="alert">
+                    {err}
+                  </div>
+                ) : (
+                  <div></div>
+                )}
+                <Button variant="primary" type="submit">
+                  Kaydol
+                </Button>
+              </Container>
+            </Form>
+          </Container>
+        </div>
+      </div>
     </Container>
   );
 };
